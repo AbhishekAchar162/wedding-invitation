@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Checker</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+        
+        .github-logo {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+        
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        a {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #24292e;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        a:hover {
+            background: #2f363d;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .status {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f6f8fa;
+            border-radius: 8px;
+            color: #586069;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="github-logo">🐙</div>
+        <h1>GitHub Checker</h1>
+        <p style="color: #586069; margin-bottom: 20px;">Quick access to GitHub</p>
+        
+        <div class="links">
+            <a href="https://github.com" target="_blank">Visit GitHub</a>
+            <a href="https://github.com/status" target="_blank">Check GitHub Status</a>
+            <a href="https://github.com/explore" target="_blank">Explore GitHub</a>
+        </div>
+        
+        <div class="status">
+            <p>Click any link above to check GitHub</p>
+        </div>
+    </div>
+</body>
+</html>
