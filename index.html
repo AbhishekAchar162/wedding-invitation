@@ -51,79 +51,17 @@
             padding: 40px 20px;
             position: relative;
             overflow: hidden;
+            background-image: url('couplebackgrnd.png');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
         }
         
-        .hero-collage {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            background: linear-gradient(180deg, #e6cfbb 0%, #d8c0ab 100%);
-        }
-
-        .hero-collage::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background:
-                radial-gradient(circle at top, rgba(255, 255, 255, 0.38), transparent 30%),
-                linear-gradient(180deg, rgba(255, 247, 240, 0.30), rgba(105, 67, 44, 0.26));
-        }
-
-        .collage-photo {
-            position: absolute;
-            left: var(--left);
-            top: var(--top);
-            width: var(--width);
-            aspect-ratio: 3 / 4;
-            padding: 12px 12px 28px;
-            background: #fffaf5;
-            border: 1px solid rgba(138, 104, 79, 0.12);
-            box-shadow: 0 18px 30px rgba(96, 66, 46, 0.24);
-            transform: rotate(var(--rotate));
-            overflow: hidden;
-        }
-
-        .collage-photo::before,
-        .collage-photo::after {
-            content: '';
-            position: absolute;
-            top: 8px;
-            width: 56px;
-            height: 16px;
-            background: rgba(242, 217, 181, 0.85);
-            box-shadow: 0 2px 3px rgba(120, 92, 64, 0.18);
-            z-index: 2;
-        }
-
-        .collage-photo::before {
-            left: 18px;
-            transform: rotate(-10deg);
-        }
-
-        .collage-photo::after {
-            right: 18px;
-            transform: rotate(11deg);
-        }
-
-        .collage-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            filter: saturate(1.05) contrast(1.03);
-        }
-
         .hero-overlay {
             position: absolute;
             inset: 0;
             z-index: 1;
-            background: rgba(88, 54, 33, 0.30);
+            background: linear-gradient(180deg, rgba(53, 30, 17, 0.40), rgba(53, 30, 17, 0.52));
         }
         
         .hero-content {
@@ -137,6 +75,7 @@
             border: 1px solid rgba(255, 255, 255, 0.24);
             border-radius: 32px;
             box-shadow: 0 18px 40px rgba(64, 40, 24, 0.16);
+            margin-top: 75%;
         }
         
         /* Language Toggle */
@@ -304,7 +243,7 @@
         
         /* Groom & Bride Section */
         .groom-bride {
-            background: #fff;
+            background-color: #411804;
         }
         
         .couple-container {
@@ -518,12 +457,16 @@
         
         /* When & Where Section */
         .when-where {
-            background: linear-gradient(135deg, #ff6b9d 0%, #ff8fab 100%);
-            color: white;
+            position: relative;
+            background:
+                linear-gradient(180deg, rgba(58, 38, 27, 0.58), rgba(58, 38, 27, 0.72)),
+                url('backimage.png') center/cover no-repeat;
+            color: #fff8f0;
         }
         
         .when-where .section-title {
-            color: white;
+            color: #fff4e8;
+            text-shadow: 0 3px 18px rgba(49, 31, 22, 0.4);
         }
         
         .events-container {
@@ -534,12 +477,13 @@
         }
         
         .event-card {
-            background: white;
-            color: #333;
+            background: rgba(255, 250, 245, 0.96);
+            color: #3e2e24;
             padding: 40px;
-            border-radius: 15px;
+            border-radius: 22px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border: 1px solid rgba(142, 109, 82, 0.16);
+            box-shadow: 0 14px 34px rgba(38, 24, 16, 0.18);
         }
         
         .event-icon {
@@ -550,18 +494,18 @@
         .event-title {
             font-family: 'Playfair Display', serif;
             font-size: 1.8rem;
-            color: #ff6b9d;
+            color: #9f5b3d;
             margin-bottom: 20px;
         }
         
         .event-date, .event-time {
             font-size: 1.1rem;
-            color: #666;
+            color: #6f594a;
             margin: 10px 0;
         }
         
         .event-location {
-            color: #333;
+            color: #3e2e24;
             margin: 15px 0;
             font-weight: 500;
         }
@@ -572,24 +516,25 @@
         }
         
         .map-btn {
-            background: #ff6b9d;
-            color: white;
+            background: #8b5a3d;
+            color: #fff8f0;
             padding: 12px 30px;
             border: none;
             border-radius: 25px;
             margin-top: 20px;
             cursor: pointer;
             font-size: 1rem;
-            transition: background 0.3s;
+            transition: background 0.3s, transform 0.3s;
         }
         
         .map-btn:hover {
-            background: #ff5a8a;
+            background: #73432a;
+            transform: translateY(-1px);
         }
         
         /* Greetings Section */
         .greetings {
-            background: #fff;
+            background: #411804;
         }
         
         .testimonials-container {
@@ -683,6 +628,7 @@
             .hero-content {
                 padding: 32px 18px;
                 border-radius: 24px;
+                margin-top: 75%;
             }
 
             .hero-subtitle {
@@ -750,71 +696,6 @@
 <body>
     <!-- Hero Section -->
     <div class="hero" id="home">
-        <div class="hero-collage" aria-hidden="true">
-            <div class="collage-photo" style="--left: 2%; --top: 4%; --width: 15%; --mobile-width: 28vw; --rotate: -8deg;">
-                <img src="WhatsApp Image 2026-04-02 at 1.48.56 PM (1).jpeg" alt="">
-            </div>
-            <div class="collage-photo" style="--left: 16%; --top: 2%; --width: 16%; --mobile-width: 30vw; --rotate: 8deg;">
-                <img src="WhatsApp Image 2026-04-02 at 1.48.50 PM.jpeg" alt="">
-            </div>
-            <div class="collage-photo" style="--left: 33%; --top: 3%; --width: 14%; --mobile-width: 26vw; --rotate: -6deg;">
-                <img src="WhatsApp Image 2026-04-02 at 1.48.53 PM.jpeg" alt="">
-            </div>
-            <div class="collage-photo" style="--left: 51%; --top: 2%; --width: 16%; --mobile-width: 28vw; --rotate: 7deg;">
-                <img src="WhatsApp Image 2026-04-02 at 1.48.55 PM (1).jpeg" alt="">
-            </div>
-            <div class="collage-photo" style="--left: 75%; --top: 1%; --width: 14%; --mobile-width: 26vw; --rotate: 6deg;">
-                <img src="WhatsApp Image 2026-04-02 at 1.49.00 PM.jpeg" alt="">
-            </div>
-            <div class="collage-photo" style="--left: 5%; --top: 25%; --width: 13%; --mobile-width: 24vw; --rotate: 4deg;">
-                <img src="WhatsApp Image 2026-04-02 at 1.48.55 PM.jpeg" alt="">
-            </div>
-            <div class="collage-photo" style="--left: 23%; --top: 22%; --width: 15%; --mobile-width: 28vw; --rotate: -5deg;">
-                <img src="WhatsApp Image 2026-04-02 at 1.48.59 PM.jpeg" alt="">
-            </div>
-            <div class="collage-photo" style="--left: 40%; --top: 24%; --width: 14%; --mobile-width: 24vw; --rotate: 5deg;">
-                <img src="WhatsApp Image 2026-04-02 at 1.48.57 PM.jpeg" alt="">
-            </div>
-            <div class="collage-photo" style="--left: 57%; --top: 23%; --width: 16%; --mobile-width: 28vw; --rotate: -7deg;">
-                <img src="WhatsApp Image 2026-04-02 at 1.48.56 PM.jpeg" alt="">
-            </div>
-            <div class="collage-photo" style="--left: 78%; --top: 24%; --width: 14%; --mobile-width: 24vw; --rotate: -4deg;">
-                <img src="WhatsApp Image 2026-04-02 at 1.48.52 PM.jpeg" alt="">
-            </div>
-            <div class="collage-photo" style="--left: 3%; --top: 43%; --width: 13%; --mobile-width: 22vw; --rotate: -3deg;">
-                <img src="WhatsApp Image 2026-04-02 at 1.48.54 PM (1).jpeg" alt="">
-            </div>
-            <div class="collage-photo" style="--left: 18%; --top: 48%; --width: 14%; --mobile-width: 24vw; --rotate: 5deg;">
-                <img src="couple.jpeg" alt="">
-            </div>
-            <div class="collage-photo" style="--left: 35%; --top: 41%; --width: 15%; --mobile-width: 26vw; --rotate: 1deg;">
-                <img src="WhatsApp Image 2026-04-02 at 1.48.59 PM (1).jpeg" alt="">
-            </div>
-            <div class="collage-photo" style="--left: 54%; --top: 46%; --width: 13%; --mobile-width: 23vw; --rotate: -4deg;">
-                <img src="WhatsApp Image 2026-04-02 at 1.48.51 PM.jpeg" alt="">
-            </div>
-            <div class="collage-photo" style="--left: 71%; --top: 48%; --width: 14%; --mobile-width: 24vw; --rotate: -6deg;">
-                <img src="WhatsApp Image 2026-04-02 at 1.48.54 PM.jpeg" alt="">
-            </div>
-            <div class="collage-photo" style="--left: 84%; --top: 46%; --width: 12%; --mobile-width: 20vw; --rotate: 5deg;">
-                <img src="WhatsApp Image 2026-04-02 at 1.48.59 PM (2).jpeg" alt="">
-            </div>
-            <div class="collage-photo" style="--left: 4%; --top: 74%; --width: 14%; --mobile-width: 25vw; --rotate: -7deg;">
-                <img src="WhatsApp Image 2026-04-02 at 1.48.51 PM (1).jpeg" alt="">
-            </div>
-            <div class="collage-photo" style="--left: 25%; --top: 70%; --width: 13%; --mobile-width: 24vw; --rotate: 4deg;">
-                <img src="main_bck_1.jpg" alt="">
-            </div>
-            <div class="collage-photo" style="--left: 47%; --top: 69%; --width: 14%; --mobile-width: 25vw; --rotate: -2deg;">
-                <img src="main_bck_2.webp" alt="">
-            </div>
-            <div class="collage-photo" style="--left: 60%; --top: 73%; --width: 12%; --mobile-width: 22vw; --rotate: 6deg;">
-                <img src="main_bck.jpeg" alt="">
-            </div>
-            <div class="collage-photo" style="--left: 76%; --top: 71%; --width: 13%; --mobile-width: 24vw; --rotate: -5deg;">
-                <img src="WhatsApp Image 2026-04-02 at 1.48.53 PM.jpeg" alt="">
-            </div>
-        </div>
         <div class="hero-overlay"></div>
         
         <div class="language-toggle">
@@ -903,9 +784,9 @@
     </section>
 
     <!-- RSVP Section -->
-    <section class="greetings" id="rsvp" style="background: #f8f8f8;">
+    <section class="greetings" id="rsvp">
         <div style="max-width: 600px; margin: 0 auto; text-align: center;">
-            <p style="font-size: 1.2rem; color: #666; margin-bottom: 30px;" data-translate="rsvpMessage">
+            <p style="font-size: 1.7rem; color: #ffffff; margin-bottom: 30px;" data-translate="rsvpMessage">
                 With hearts full of love and joy,
                 we invite you to be a part of our special day.
                 Your presence will make our celebration complete.
@@ -940,7 +821,7 @@
                 addToCalendar: "Add to Calendar",
                 whatsappReminder: "Set WhatsApp Reminder",
                 brideGroom: "Bride & Groom",
-                placeTime: "Reception Place & Time",
+                placeTime: "Place & Time",
                 ceremonyDate: "Monday, April 20, 2026",
                 ceremonyLocation: "Vishweshwara Sabhabhavana, Trasi, Kundapura",
                 reception: "Reception Ceremony",
@@ -1103,22 +984,11 @@
             const dotsContainer = carousel.querySelector('.photo-carousel-dots');
             const photoFiles = [
                 'WhatsApp Image 2026-04-02 at 1.48.50 PM.jpeg',
-                'WhatsApp Image 2026-04-02 at 1.48.51 PM (1).jpeg',
                 'WhatsApp Image 2026-04-02 at 1.48.51 PM.jpeg',
                 'WhatsApp Image 2026-04-02 at 1.48.52 PM.jpeg',
                 'WhatsApp Image 2026-04-02 at 1.48.53 PM.jpeg',
-                'WhatsApp Image 2026-04-02 at 1.48.54 PM (1).jpeg',
                 'WhatsApp Image 2026-04-02 at 1.48.54 PM.jpeg',
-                'WhatsApp Image 2026-04-02 at 1.48.55 PM (1).jpeg',
-                'WhatsApp Image 2026-04-02 at 1.48.55 PM.jpeg',
-                'WhatsApp Image 2026-04-02 at 1.48.56 PM (1).jpeg',
-                'WhatsApp Image 2026-04-02 at 1.48.56 PM.jpeg',
-                'WhatsApp Image 2026-04-02 at 1.48.57 PM.jpeg',
-                'WhatsApp Image 2026-04-02 at 1.48.59 PM (1).jpeg',
-                'WhatsApp Image 2026-04-02 at 1.48.59 PM (2).jpeg',
-                'WhatsApp Image 2026-04-02 at 1.48.59 PM.jpeg',
-                'WhatsApp Image 2026-04-02 at 1.49.00 PM.jpeg',
-                'WhatsApp Image 2026-04-05 at 11.55.42 AM.jpeg'
+         
             ];
             let currentIndex = 0;
             let autoPlayId = null;
